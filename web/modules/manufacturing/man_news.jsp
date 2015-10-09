@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.Iterator"%>
 <!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -47,38 +49,38 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						Home
 						</a>
 						</li>
+                                               
 						<!---->
 						<li class="col-md-2">
-						<a href="man_index.jsp" class="pink">
+						<a href="../../ManuDisplayEngine" class="pink">
 						<span class="glyphicon glyphicon-cog " aria-hidden="true"></span>
 						Manufacturing
 						</a>
 						</li>
-						<!---->
-						<li class="col-md-2">
-						<a href="man_about.jsp" class="orang">
-						<span class="glyphicon glyphicon-user " aria-hidden="true"></span>
-						About
+						 <li class="col-md-2">
+						<a href="man_services.jsp" class="sky">
+						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+						Design
 						</a>
 						</li>
 						<!---->
 						<li class="col-md-2">
 						<a href="man_news.jsp" class="gray">
 						<span class="glyphicon glyphicon-thumbs-up " aria-hidden="true"></span>
-						News
+						Availability
 						</a>
 						</li>
 						<!---->
 						<li class="col-md-2">	
 						<a href="man_blog.jsp" class="green">
 						<span class="glyphicon glyphicon-picture " aria-hidden="true"></span>
-						Blog
+						Price
 						</a>
 						</li>
 						<li class="col-md-2">
 						<a href="man_contact.jsp" class="sky">
 						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-						Contact
+						Report
 						</a>
 						</li>
 						<div class="clearfix">
@@ -100,7 +102,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<div class="container">
 				<div class="logo">
-						<h1><a href="man_index.jsp">Manufacturing</a></h1>
+						<h1><a href="man_index.jsp">Availability</a></h1>
 				</div>
 				<div class="ad-ph">
 					<p>Call Us : <span>(880)</span>123 2500</p>
@@ -122,29 +124,98 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="news-right">
 						<h4>05 June, 2015</h4>
 						<h6><a href="#">Integer rutrum ante</a></h6>
-						<p>Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, cotetuer adipiscing elit. Praesent vestibulum molestie lacus ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum.</p>
+						<p>The performance of an engine is measured by power output, economy, durability, and emissions. Today's engines are computer controlled and regulate the air / fuel delivery, ignition timing, and emissions.</p>
+                                                
+                <table><tr><td>Model Number</td><td>Part Name</td><td>Available item</td></tr><%Iterator itr1;%>
+                                                    <%List data1=(List)request.getAttribute("EmpData1");
+                                                    for(itr1=data1.iterator();itr1.hasNext();){
+                                                            %>
+                                                           
+                                                          
+                                                            <tr>
+                                                                
+                                                         
+                                                            <td><%= itr1.next()%></td>
+                                                            <td><%= itr1.next()%></td>
+                                                             <td><%= itr1.next()%></td>
+                                                            <td><%= itr1.next()%></td>
+                                                            <td><%= itr1.next()%></td>
+                                                            
+                                                          
+                                                            <%}%></tr></table>
 					</div>
 				</div>
 				<div class="col-md-6 news-left">
 					<div class="news-right">
 						<h4>05 June, 2015</h4>
 						<h6><a href="#">Duis ac turpis</a></h6>
-						<p>Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, cotetuer adipiscing elit. Praesent vestibulum molestie lacus ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum.</p>
-					</div>
+						<p>The performance of an engine is measured by power output, economy, durability, and emissions. Today's engines are computer controlled and regulate the air / fuel delivery, ignition timing, and emissions.</p>
+                                                
+                <table><tr><td>Model Number</td><td>Part Name</td><td>Available item</td></tr><%Iterator itr2;%>
+                                                    <%List data2=(List)request.getAttribute("EmpData2");
+                                                    for(itr2=data2.iterator();itr2.hasNext();){
+                                                            %>
+                                                           
+                                                          
+                                                            <tr>
+                                                                
+                                                         
+                                                            <td><%= itr2.next()%></td>
+                                                            <td><%= itr2.next()%></td>
+                                                             <td><%= itr2.next()%></td>
+                                                            <td><%= itr2.next()%></td>
+                                                            <td><%= itr2.next()%></td>
+                                                            
+                                                          
+                                                            <%}%></tr></table></div>
 				</div>
 				<div class="col-md-6 news-left">
 					<div class="news-right">
 						<h4>05 June, 2015</h4>
 						<h6><a href="#"> Aliquam erat volutpat</a></h6>
-						<p>Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, cotetuer adipiscing elit. Praesent vestibulum molestie lacus ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum.</p>
-					</div>
+						<p>The performance of an engine is measured by power output, economy, durability, and emissions. Today's engines are computer controlled and regulate the air / fuel delivery, ignition timing, and emissions.</p>
+                                                
+                <table><tr><td>Model Number</td><td>Part Name</td><td>Available item</td></tr><%Iterator itr3;%>
+                                                    <%List data3=(List)request.getAttribute("EmpData3");
+                                                    for(itr3=data3.iterator();itr3.hasNext();){
+                                                            %>
+                                                           
+                                                          
+                                                            <tr>
+                                                                
+                                                         
+                                                            <td><%= itr3.next()%></td>
+                                                            <td><%= itr3.next()%></td>
+                                                             <td><%= itr3.next()%></td>
+                                                            <td><%= itr3.next()%></td>
+                                                            <td><%= itr3.next()%></td>
+                                                            
+                                                          
+                                                            <%}%></tr></table></div>
 				</div>
 				<div class="col-md-6 news-left">
 					<div class="news-right">
 						<h4>05 June, 2015</h4>
 						<h6><a href="#">cotetuer adipiscing elit</a></h6>
-						<p>Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, cotetuer adipiscing elit. Praesent vestibulum molestie lacus ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum.</p>
-					</div>
+						<p>The performance of an engine is measured by power output, economy, durability, and emissions. Today's engines are computer controlled and regulate the air / fuel delivery, ignition timing, and emissions.</p>
+                                                
+                <table><tr><td>Model Number</td><td>Part Name</td><td>Available item</td></tr><%Iterator itr4;%>
+                                                    <%List data4=(List)request.getAttribute("EmpData4");
+                                                    for(itr4=data4.iterator();itr4.hasNext();){
+                                                            %>
+                                                           
+                                                          
+                                                            <tr>
+                                                                
+                                                         
+                                                            <td><%= itr4.next()%></td>
+                                                            <td><%= itr4.next()%></td>
+                                                             <td><%= itr4.next()%></td>
+                                                            <td><%= itr4.next()%></td>
+                                                            <td><%= itr4.next()%></td>
+                                                            
+                                                          
+                                                            <%}%></tr></table></div>
 				</div>
 				<div class="clearfix"></div>
 				<div class="news-bottom">
@@ -162,6 +233,56 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<p>Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, cotetuer adipiscing elit. Praesent vestibulum molestie lacus ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum.</p>
 					</div>
 					<div class="clearfix"></div>
+				</div>
+                                	<div class="col-md-6 news-left">
+					<div class="news-right">
+						<h4>05 June, 2015</h4>
+						<h6><a href="#">Integer rutrum ante</a></h6>
+						<p>The performance of an engine is measured by power output, economy, durability, and emissions. Today's engines are computer controlled and regulate the air / fuel delivery, ignition timing, and emissions.</p>
+                                                
+                <table><tr><td>Model Number</td><td>Part Name</td><td>Available item</td></tr><%Iterator itr5;%>
+                                                    <%List data5=(List)request.getAttribute("EmpData5");
+                                                    for(itr5=data5.iterator();itr5.hasNext();){
+                                                            %>
+                                                           
+                                                          
+                                                            <tr>
+                                                                
+                                                         
+                                                            <td><%= itr5.next()%></td>
+                                                            <td><%= itr5.next()%></td>
+                                                             <td><%= itr5.next()%></td>
+                                                            <td><%= itr5.next()%></td>
+                                                            <td><%= itr5.next()%></td>
+                                                            
+                                                          
+                                                            <%}%></tr></table>
+					</div>
+				</div>
+                                        	<div class="col-md-6 news-left">
+					<div class="news-right">
+						<h4>05 June, 2015</h4>
+						<h6><a href="#">Integer rutrum ante</a></h6>
+						<p>The performance of an engine is measured by power output, economy, durability, and emissions. Today's engines are computer controlled and regulate the air / fuel delivery, ignition timing, and emissions.</p>
+                                                
+                <table><tr><td>Model Number</td><td>Part Name</td><td>Available item</td></tr><%Iterator itr6;%>
+                                                    <%List data6=(List)request.getAttribute("EmpData6");
+                                                    for(itr6=data6.iterator();itr6.hasNext();){
+                                                            %>
+                                                           
+                                                          
+                                                            <tr>
+                                                                
+                                                         
+                                                            <td><%= itr6.next()%></td>
+                                                            <td><%= itr6.next()%></td>
+                                                             <td><%= itr6.next()%></td>
+                                                            <td><%= itr6.next()%></td>
+                                                            <td><%= itr6.next()%></td>
+                                                            
+                                                          
+                                                            <%}%></tr></table>
+					</div>
 				</div>
 			</div>
 		</div>
