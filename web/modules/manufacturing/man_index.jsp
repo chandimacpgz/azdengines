@@ -24,6 +24,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<script src="../../js/module_jquery-2.1.4.min.js"></script>
 		<!--bootstrap-js-->
 			<script src="../../js/module_bootstrap.min.js"></script>
+                         <style>input {
+                                color: #FFFFFF; font-weight: bold; font-size: 14px; background-color: #FF0000;
+                            }</style>
                         
                           <style>
                         table, th, td {
@@ -34,6 +37,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         padding: 15px;
                         }
                         </style>
+                        
+                         <script type="text/javascript">
+                            
+                            function Create(id){
+                              
+                                url="ManuCreateEngine";
+                                window.location.href="http://localhost:8086/azdengines/"+ url +"?id="+id;
+                            }
+                        </script>
 </head>
 <body>
 		
@@ -149,6 +161,43 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 			</div>
 		</div>
+                
+                 <div class="container">
+				<div class="col-md-8 news-left">
+                                    <div class="news-right">
+                                        
+                                        <h1 >Create Engine</h1><br/>
+                                       <table>  <tr><td>Model ID</td><td>Engine Name</td><td>Fuel type</td><td>Cylinder</td><td>Cubic Capacity</td><td>Cost</td><td>Quantity</td><td>Create</td></tr>         
+                                        <%Iterator itr7;%>
+                                                    <%List data7=(List)request.getAttribute("EmpData1");
+                                                    for(itr7=data7.iterator();itr7.hasNext();){
+                                                            %>
+             
+                   
+                                                                 
+                                                         <tr>
+                                                               <% String s=(String) itr7.next();%>
+                                                            <td><%=s%></td>
+                                                       <td><%= itr7.next()%></td>
+                                                        <td><%= itr7.next()%></td>
+                                                         <td><%= itr7.next()%></td>
+                                                          <td><%= itr7.next()%></td>
+                                                            <td><%= itr7.next()%></td>
+                                                              <td><%= itr7.next()%></td>
+                                                              <td><input type="submit"  name="Create" value="Create" onclick="Create(<%=s%>)" ></td>
+                                                        
+                                                           
+                                                           
+                                                         <%}%>   
+                                                         </tr>
+                  
+                                       </table>
+                                    </div></div></div>
+                                                         <div> <div class="container">
+				<div class="col-md-6 news-left">
+                                    <div class="news-right"><h2>Engine Modules</h2></div></div></div></div>
+                                    
+                
                <%Iterator itr1;%>
                                                     <%List data1=(List)request.getAttribute("EmpData1");
                                                     for(itr1=data1.iterator();itr1.hasNext();){

@@ -7,14 +7,7 @@ package Manufacture;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,14 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Krish
  */
-public class ManuDisplayEngine extends HttpServlet {
+public class CreateModule extends HttpServlet {
 
-    Connection conn;
-    Statement stmt;
-    ResultSet res1;
-    ManuDatabaseConnection dbconn;
-    String query1;
-     List lst1 = new ArrayList();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -43,37 +30,17 @@ public class ManuDisplayEngine extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-          PrintWriter out = response.getWriter();
-        try {
-            dbconn=new ManuDatabaseConnection();
-            conn=dbconn.setConnection();
-            stmt=conn.createStatement();
-            query1="select * from EngineModel;";
-             res1 =dbconn.getResult(query1, conn);
-          while(res1.next()){
-                lst1.add(res1.getString("ModelID"));
-                lst1.add(res1.getString("EngineName"));
-                lst1.add(res1.getString("FuelType"));
-                lst1.add(res1.getString("Cylinders"));
-                lst1.add(res1.getString("CubicCapacity"));
-                lst1.add(res1.getString("Cost"));
-                lst1.add(res1.getString("Quantity"));
-                
-                
-            }res1.close(); 
-        }catch (Exception e){
-             
-            RequestDispatcher rd =request.getRequestDispatcher("/modules/manufacturing/error.jsp");
-            rd.forward(request, response);
-        }finally
-        {
-            request.setAttribute("EmpData1", lst1);
-             RequestDispatcher rd =request.getRequestDispatcher("/modules/manufacturing/man_index.jsp");
-            rd.forward(request, response);
-             lst1.clear();
-             out.close();
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+           String name=request.getParameter("ename");
+           String fuel=request.getParameter("item");
+           out.print(fuel);
+           out.print(name);
+           
         }
-    }// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *

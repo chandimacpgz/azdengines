@@ -1,9 +1,9 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<%-- 
+    Document   : enginedesign
+    Created on : Oct 10, 2015, 8:45:20 AM
+    Author     : Krish
+--%>
+
 <!doctype html>
 <html>
 	<head>
@@ -115,79 +115,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<h2>Engine Design</h2>
 			</div>	
 		</div>	
-		<!-- /banner -->
-		<!-- services -->
-			<div class="services">
+                
+                
+              <div class="services">
 				<div class="container">
 					<div class="services-bottom">
 						<div class="col-md-8 ser-lft">
-						<h3>Engine Design</h3>
-							<div class="ser-tp">
-								<div class="ser-rt">
-									<img src="../../images/Manuima1.jpg" class="img-responsive" alt="">
-								</div>
-								<div class="ser-lt">
-									<h5>Engine Design</h5>
-                                                                       
-                                                                        <h3><a href="enginedesign.jsp"><span class="label label-primary">Engine Design</span></a></h3>
-                                                                         
-								</div>
-                                                            
-									<div class="clearfix"></div>
-							</div>
-							<div class="ser-tp">
-								<div class="ser-rt">
-									<img src="../../images/Manuima2.jpg" class="img-responsive" alt="">
-								</div>
-								<div class="ser-lt">
-									<h5>Engine Modification</h5>
-                                                                        <h3><a href="#"><span class="label label-info">Engine Modification</span></a></h3>
-								</div>
-									<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="col-md-4 ser-rgt">
-							<h3>Springs & Suspension</h3>
-							<h5>simply random text</h5>
-							<p>Lorem Ipsum is not simply random text. It has roots Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from in a piece  </p>
-							<h5>simply random text</h5>
-							<p>Lorem Ipsum is not simply random text. It has roots Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from in a piece </p>
-							<h5>simply random text</h5>
-							<p>Lorem Ipsum is not simply random text. It has roots Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from in a piece</p>
-							<div class="clearfix"></div>
-					</div>
-					<div class="services-top">
-						<div class="col-md-6 se-lt">
-							<h3>Services Warranty Options</h3>
-							<h5>Aenean nonummy hendrerit mauris. </h5>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC</p>
-							<ul>
-								<li><a href="#"><span></span>I enjoy with my whole the release  simply </a></li>
-								<li><a href="#"><span></span>Lorem Ipsum is the release  simply that it </a></li>
-								<li><a href="#"><span></span>Sweet mornings of the release  simply spring</a></li>
-								<li><a href="#"><span></span>Entire soul, the release simply like these</a></li>
-							</ul>
-						</div>
-						<div class="col-md-6 se-lt">
-							<h3>Maintenance And Repair</h3>
-							<h5>Hendrerit mauris Aenean nonummy . </h5>
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of</p>
-							<ul>
-								<li><a href="#"><span></span>Entire soul, the release simply like these</a></li>
-								<li><a href="#"><span></span>I enjoy with my whole the release  simply </a></li>
-								<li><a href="#"><span></span>Lorem Ipsum is the release  simply that it </a></li>
-								<li><a href="#"><span></span>Sweet mornings of the release  simply spring</a></li>
-							</ul>
-							<p>Lorem Ipsum, you need to be sure there isn't anything  repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated</p>
-						</div>
-							<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- services -->
-		<!-- footer -->
-		<div class="footer">
+                                                    <h3>Engine Design</h3></div></div></div>
+                  
+                  <form action="../../CreateModule">
+                      Engine Name :  <input type="text" name="ename"><br/>
+                      Fuel Type :   <select name="item">
+                        <option value="Petrol">Petrol</option>
+                        <option value="Diesel">Diesel</option>
+                        
+                      </select>
+                     
+                      <input type="submit" value="Submit">
+                  </form>
+                </div>
+                
+                <div class="footer">
 	<div class="container">
 		<div class="col-md-3 footer-left">
 			<h3>Telephone</h3>

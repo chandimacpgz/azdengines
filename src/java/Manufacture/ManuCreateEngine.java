@@ -9,12 +9,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,14 +23,13 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Krish
  */
-public class ManuDisplayEngine extends HttpServlet {
-
-    Connection conn;
+public class ManuCreateEngine extends HttpServlet {
+        String modelid;
+         Connection conn;
     Statement stmt;
     ResultSet res1;
     ManuDatabaseConnection dbconn;
-    String query1;
-     List lst1 = new ArrayList();
+    String query1,query2;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -43,37 +42,33 @@ public class ManuDisplayEngine extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-          PrintWriter out = response.getWriter();
-        try {
-            dbconn=new ManuDatabaseConnection();
+        PrintWriter out = response.getWriter();
+        try  {
+            
+             dbconn=new ManuDatabaseConnection();
+            modelid=request.getParameter("id");
+           
             conn=dbconn.setConnection();
             stmt=conn.createStatement();
-            query1="select * from EngineModel;";
-             res1 =dbconn.getResult(query1, conn);
-          while(res1.next()){
-                lst1.add(res1.getString("ModelID"));
-                lst1.add(res1.getString("EngineName"));
-                lst1.add(res1.getString("FuelType"));
-                lst1.add(res1.getString("Cylinders"));
-                lst1.add(res1.getString("CubicCapacity"));
-                lst1.add(res1.getString("Cost"));
-                lst1.add(res1.getString("Quantity"));
-                
-                
-            }res1.close(); 
-        }catch (Exception e){
+            query1="insert into EngineType(ModelID) values('"+modelid+"')";
+            query2="update EngineModel Set Quantity=Quantity+1 where ModelID='"+modelid+"'";
+            int i =stmt.executeUpdate(query1);
+             int i1 =stmt.executeUpdate(query2);
+        }   catch (Exception e){
              
             RequestDispatcher rd =request.getRequestDispatcher("/modules/manufacturing/error.jsp");
             rd.forward(request, response);
         }finally
         {
-            request.setAttribute("EmpData1", lst1);
-             RequestDispatcher rd =request.getRequestDispatcher("/modules/manufacturing/man_index.jsp");
+            
+             RequestDispatcher rd =request.getRequestDispatcher("ManuDisplayEngine");
             rd.forward(request, response);
-             lst1.clear();
+             
              out.close();
         }
-    }// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
