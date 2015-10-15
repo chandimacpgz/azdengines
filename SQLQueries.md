@@ -42,7 +42,6 @@ CREATE TABLE PartType(
 
 
 select * from EngineModel
-insert into EngineType(ModelID) values(1)
 select * from EngineType
 
 insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Cost) values(1,"A","diesel",2,30,10000);
