@@ -10,6 +10,7 @@ CREATE TABLE EngineModel(
 	FuelType varchar(50) not null,
 	Cylinders int not null,
 	CubicCapacity float not null,
+	Kit varchar(50),
 	Quantity int,
 	Cost real not null,
 	SellingPrice real,
@@ -44,12 +45,12 @@ CREATE TABLE PartType(
 select * from EngineModel
 select * from EngineType
 
-insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Cost) values(1,"A","diesel",2,30,10000);
-insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Cost) values(2,"B","diesel",4,40,40000);
-insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Cost) values(3,"C","petrol",6,60,50000);
-insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Cost) values(4,"D","petrol",3,60,20000);
-insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Cost) values(5,"E","diesel",1,20,120000);
-insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Cost) values(6,"F","petrol",5,50,15000);
+insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost) values(1,"A","diesel",2,30,"Kit1",10000);
+insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost) values(2,"B","diesel",4,40,"Kit1",40000);
+insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost) values(3,"C","petrol",6,60,"Kit1",50000);
+insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost) values(4,"D","petrol",3,60,"Kit1",20000);
+insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost) values(5,"E","diesel",1,20,"Kit1",120000);
+insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost) values(6,"F","petrol",5,50,"Kit1",15000);
 
 
 
