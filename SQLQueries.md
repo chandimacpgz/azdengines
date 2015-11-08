@@ -41,7 +41,6 @@ CREATE TABLE PartType(
         foreign key(PartID) references EngineParts(PartID)
 );
 
-
 select * from EngineModel
 select * from EngineType
 
@@ -74,3 +73,87 @@ insert into PartType(PartID,ModelID) values(16,5);
 insert into PartType(PartID,ModelID) values(16,5);
 insert into PartType(PartID,ModelID) values(10,6);
 insert into PartType(PartID,ModelID) values(14,6);
+
+//////////////////////////////////////////////////////////////////////////////
+Sales
+*Advertising Tables
+*Sister Company Table
+//////////////////////////////////////////////////////////////////////////////
+CREATE TABLE EngineOrder(
+	UserID varchar(15) primary key,
+	UserFName varchar(50) not null,
+	UserLName varchar(50) not null,
+	UserEmail varchar(100) not null,
+	UserContact int not null,
+	OrderDate varchar(50),
+	OrderTime varchar(50),
+	ModelID int,
+	Quantity int,
+	TransactionStatus char(1),
+	foreign key(ModelID) references EngineModel(ModelID)
+);
+
+
+CREATE TABLE DiscountAd(
+	DiscountAdID int AUTO_INCREMENT primary key,
+	DiscountName varchar(50),
+	EmphasizeName varchar(50),
+	DiscountValue int
+	
+);
+
+
+CREATE TABLE SliderAd(
+	SliderAdID int AUTO_INCREMENT primary key,
+	SliderImage1 varchar(1000),
+	SliderImage2 varchar(1000),
+	SliderImage3 varchar(1000),
+	SliderImage4 varchar(1000)
+);
+
+CREATE TABLE DealAd(
+	DealAdID int AUTO_INCREMENT primary key,
+	DealTitle varchar(50),
+	DealExp int,
+	DealDisPercentage int,
+	DealImage varchar(1000)
+);
+
+
+CREATE TABLE ArrivalAd(
+	ArrivalID int AUTO_INCREMENT primary key,
+	ArrivalImage1 varchar(1000),
+	ArrivalImage2 varchar(1000),
+	ArrivalImage3 varchar(1000)
+);
+
+CREATE TABLE sisCom_ware_Eng_Available(
+	CompanyID int,
+	ModelID int,
+	AvailableQty int,
+	foreign key(ModelID) references EngineModel(ModelID)
+);
+
+
+CREATE TABLE sisCom_Requests(
+	CompanyID int,
+	ModelID int,
+	RequestQty int,
+	OrderDate varchar(50),
+	OrderTime varchar(50),
+	foreign key(ModelID) references EngineModel(ModelID)
+);
+
+insert into sisCom_ware_Eng_Available(CompanyID,ModelID,AvailableQty) values(1,1,10);
+insert into sisCom_ware_Eng_Available(CompanyID,ModelID,AvailableQty) values(1,2,20);
+insert into sisCom_ware_Eng_Available(CompanyID,ModelID,AvailableQty) values(1,3,30);
+insert into sisCom_ware_Eng_Available(CompanyID,ModelID,AvailableQty) values(1,4,0);
+insert into sisCom_ware_Eng_Available(CompanyID,ModelID,AvailableQty) values(1,5,0);
+insert into sisCom_ware_Eng_Available(CompanyID,ModelID,AvailableQty) values(1,6,0);
+insert into sisCom_ware_Eng_Available(CompanyID,ModelID,AvailableQty) values(2,1,0);
+insert into sisCom_ware_Eng_Available(CompanyID,ModelID,AvailableQty) values(2,2,0);
+insert into sisCom_ware_Eng_Available(CompanyID,ModelID,AvailableQty) values(2,3,0);
+insert into sisCom_ware_Eng_Available(CompanyID,ModelID,AvailableQty) values(2,4,40);
+insert into sisCom_ware_Eng_Available(CompanyID,ModelID,AvailableQty) values(2,5,50);
+insert into sisCom_ware_Eng_Available(CompanyID,ModelID,AvailableQty) values(2,6,60);
+////////////////////////////////////////////////////////////////////////////////////////////////////
