@@ -26,7 +26,7 @@ public class SalesDatabaseConnection {
     public Connection setConnection(){
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/engine","root","");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/AZDENGINE","root","");
         }catch(Exception e){
             
         }return conn;
@@ -42,4 +42,5 @@ public class SalesDatabaseConnection {
     }
 }
   
+
 
