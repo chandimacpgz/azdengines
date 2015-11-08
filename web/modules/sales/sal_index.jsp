@@ -22,6 +22,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<script src="../../js/module_jquery-2.1.4.min.js"></script>
 		<!--bootstrap-js-->
 			<script src="../../js/module_bootstrap.min.js"></script>
+
+</head>
 </head>
 <body>
 		

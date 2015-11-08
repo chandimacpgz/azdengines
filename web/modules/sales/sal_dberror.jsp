@@ -121,18 +121,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="container">
             <div class="about-top">
                 <div class="contact-form">
-                    <form action="../../SalesReceiptDetails" method="post">
+                    <form action="sal_about.jsp">
                                                 <div class="contact-bottom">
-                                                    <h3>Enter Receipt Number</h3>
-                                                    <div class="col-md-4 in-contact">
-                                                        <input type="text" placeholder="Enter here" name="receiptno">
-                                                    </div>
+                                                    <h3><font color="red">Entered Receipt Number is either wrong or not available. <br><br>Check Again!!!</font></h3>
                                                     
-                                                    <div class="clearfix"> </div>
+                                                    
+                                                    
                                                 </div>
 
                                                 
-                                                <input type="submit" value="OK">
+                                                <input type="submit" value="Retry">
                                             </form>
                                         </div>
 
