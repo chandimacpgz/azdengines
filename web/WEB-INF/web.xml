@@ -1,28 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>ManuDisplayEngine</servlet-name>
-        <servlet-class>Manufacture.ManuDisplayEngine</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ManuCreateEngine</servlet-name>
         <servlet-class>Manufacture.ManuCreateEngine</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CreateModule</servlet-name>
-        <servlet-class>Manufacture.CreateModule</servlet-class>
+        <servlet-name>ManuCreateModule</servlet-name>
+        <servlet-class>Manufacture.ManuCreateModule</servlet-class>
     </servlet>
-    <servlet-mapping>
+    <servlet>
+        <servlet-name>ManuDesignEngine</servlet-name>
+        <servlet-class>Manufacture.ManuDesignEngine</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManuDesignNew</servlet-name>
+        <servlet-class>Manufacture.ManuDesignNew</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ManuDisplayEngine</servlet-name>
-        <url-pattern>/ManuDisplayEngine</url-pattern>
-    </servlet-mapping>
+        <servlet-class>Manufacture.ManuDisplayEngine</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManuDisplayPart</servlet-name>
+        <servlet-class>Manufacture.ManuDisplayPart</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ManuCreateEngine</servlet-name>
         <url-pattern>/ManuCreateEngine</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CreateModule</servlet-name>
-        <url-pattern>/CreateModule</url-pattern>
+        <servlet-name>ManuCreateModule</servlet-name>
+        <url-pattern>/ManuCreateModule</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManuDesignEngine</servlet-name>
+        <url-pattern>/ManuDesignEngine</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManuDesignNew</servlet-name>
+        <url-pattern>/ManuDesignNew</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManuDisplayEngine</servlet-name>
+        <url-pattern>/ManuDisplayEngine</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManuDisplayPart</servlet-name>
+        <url-pattern>/ManuDisplayPart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

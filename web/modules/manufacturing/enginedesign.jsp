@@ -4,6 +4,9 @@
     Author     : Krish
 --%>
 
+<%@page import="java.util.Vector"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Iterator"%>
 <!doctype html>
 <html>
 	<head>
@@ -22,6 +25,25 @@
 			<script src="../../js/module_jquery-2.1.4.min.js"></script>
 		<!--bootstrap-js-->
 			<script src="../../js/module_bootstrap.min.js"></script>
+                        
+                         <style>
+                        table, th, td {
+                         border: 2px solid black;
+                         border-collapse: collapse;
+                        }
+                        th, td {
+                        padding: 15px;
+                        }
+                        </style>
+                        
+                         <script type="text/javascript">
+                            
+                            function Create(id){
+                              
+                                url="ManuDesignEngine";
+                                window.location.href="http://localhost:8086/azdengines/"+ url +"?ename="+id;
+                            }
+                        </script>
 </head>
 <body>
 		
@@ -49,34 +71,34 @@
 						</li>
 						<!---->
 						<li class="col-md-2">
-						<a href="../../ManuDisplayEngine" class="pink">
+						<a href="ManuDisplayEngine" class="pink">
 						<span class="glyphicon glyphicon-cog " aria-hidden="true"></span>
 						Manufacturing
 						</a>
 						</li>
 						<!---->
 						<li class="col-md-2">
-						<a href="man_services.jsp" class="sky">
+						<a href="modules/manufacturing/man_services.jsp" class="sky">
 						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 						Design
 						</a>
 						</li>
 						<!---->
 						<li class="col-md-2">
-						<a href="man_news.jsp" class="gray">
+						<a href="ManuDisplayPart" class="gray">
 						<span class="glyphicon glyphicon-thumbs-up " aria-hidden="true"></span>
 						Availability
 						</a>
 						</li>
 						<!---->
 						<li class="col-md-2">	
-						<a href="man_blog.jsp" class="green">
+						<a href="modules/manufacturing/man_blog.jsp" class="green">
 						<span class="glyphicon glyphicon-picture " aria-hidden="true"></span>
 						Price
 						</a>
 						</li>
 						<li class="col-md-2">
-						<a href="man_contact.jsp" class="sky">
+						<a href="modules/manufacturing/man_contact.jsp" class="sky">
 						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 						Report
 						</a>
@@ -121,19 +143,132 @@
 				<div class="container">
 					<div class="services-bottom">
 						<div class="col-md-8 ser-lft">
-                                                    <h3>Engine Design</h3></div></div></div>
+                                                    <h3>Engine Design</h3></div></div></div></div>
                   
-                  <form action="../../CreateModule">
-                      Engine Name :  <input type="text" name="ename"><br/>
-                      Fuel Type :   <select name="item">
+                  
+                 <div class="container">
+                       <div class="services-top">
+				<div class="col-md-6 news-left">
+                                    <div class="news-right">
+                  <form action="ManuDesignNew">
+                      
+                      <h3>Design Panel</h3><br/>
+                      Engine Name :  <input type="text" name="ename" value="Engine Name" id="en"><br/><br/>
+                     
+                      Fuel Type :   <select name="item" >
+                           <option value="null">Select Fuel</option>
                         <option value="Petrol">Petrol</option>
                         <option value="Diesel">Diesel</option>
                         
-                      </select>
-                     
+                      </select><br/><br/>
+                      
+                      
+                      Kit Type :   <select name="kit" >
+                            <option value="null">Select Kit</option>
+                        <option value="kit1">Kit1</option>
+                        <option value="kit2">Kit2</option>
+                        <option value="kit3">Kit3</option>
+                      </select><br/><br/>
+                      
+                 
+   
+                      
+                      Cubic Capacity :
+                    <select name="cap">
+                         <option value="null">Select capacity</option>
+                      <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select><br/><br/>
+      
+    
+    Cylinder : <select name="cil" >
+         <option value="null">Select Cylinder</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                         <option value="3">3</option>
+                      </select><br/><br/>
+                                
                       <input type="submit" value="Submit">
-                  </form>
-                </div>
+                       </form>      
+                                        </div>
+                               
+                                  
+                                </div> </div>
+                     
+                    
+				<div class="container">
+                                    <div class="services-bottom"> <div class="col-md-6 news-left">
+                                            <div class="news-right">  <h3>Design Image</h3><br/><img src="../../images/engin1.jpg" class="img-responsive" alt=""> </div></div></div> 
+                      
+    
+                                </div></div>
+                             
+                              <div class="container">
+                       <div class="services-top">
+                           <div class="col-md-6 news-right">
+                               
+                               <table><tr><td>Model ID</td><td>Engine Name</td><td>Fuel Type</td><td>Cubic capacity</td><td>Cylinders</td><td>Kit</td></tr> 
+                    <%Iterator itr1;%>
+                                                    <%List data1=(List)request.getAttribute("EmpData4");
+                                                    for(itr1=data1.iterator();itr1.hasNext();){
+                                                            %>
+                                                           
+                                                          <tr>
+                                                           
+                                                              <td><%= itr1.next()%></td>
+                                                                <td>   <%= itr1.next()%></td> 
+                                                              <td><%= itr1.next()%></td>
+                                                              <td><%= itr1.next()%></td> 
+                                                              <td><%= itr1.next()%></td>
+                                                               
+                                                            <td><%= itr1.next()%></td>
+                                                           
+                                                           
+                                                           </tr>
+                                                            
+                                                          
+                                                            <%}%> </table>
+                               
+                               
+                           </div></div>
+                              
+                              
+                              <div class="container">
+                  
+                   <div class="col-md-6 ser-rgt">
+               
+                       
+                       <div class="news-right">
+                           <h3>Performance Panel</h3><br/>
+                             <h4>Speed</h4>
+                             <div class="progress">
+                                
+                            <div class="progress-bar progress-bar-danger" style="width: 25%"><span class="sr-only">10% Complete (danger)</span></div>
+                             </div><br/>
+                            <h4>Torque</h4> <div class="progress">
+                                
+                            <div class="progress-bar progress-bar-danger" style="width: 25%"><span class="sr-only">10% Complete (danger)</span></div>
+                             </div><br/>
+                              <h4>Power</h4> <div class="progress">
+                                
+                            <div class="progress-bar progress-bar-danger" style="width: 25%"><span class="sr-only">10% Complete (danger)</span></div>
+                             </div><br/>
+                               <h4>Strong & Light</h4> <div class="progress">
+                                
+                            <div class="progress-bar progress-bar-danger" style="width: 25%"><span class="sr-only">10% Complete (danger)</span></div>
+                             </div><br/>
+                                <h4>Fuel Compression</h4> <div class="progress">
+                                
+                            <div class="progress-bar progress-bar-danger" style="width: <%= 35%>%"><span class="sr-only">10% Complete (danger)</span></div>
+                             </div>
+                                
+                          
+                           
+                       </div></div></div>
+                              
+                              </div>
+    
                 
                 <div class="footer">
 	<div class="container">

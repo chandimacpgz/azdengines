@@ -3,21 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Manufacture;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,13 +23,13 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Krish
  */
-public class ManuCreateEngine extends HttpServlet {
-        String modelid;
-         Connection conn;
+public class ManuDesignNew extends HttpServlet {
+ Connection conn;
     Statement stmt;
     ResultSet res1;
     ManuDatabaseConnection dbconn;
-    String query1,query2,query3;
+    String query1,query2,query3,query4,query5,query6,query7,query8;
+     List lst1 = new ArrayList();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -48,28 +43,52 @@ public class ManuCreateEngine extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        try  {
+        try {
             
              dbconn=new ManuDatabaseConnection();
-            modelid=request.getParameter("id");
+          
            
             conn=dbconn.setConnection();
             stmt=conn.createStatement();
-            
-            query2="update EngineModel Set Quantity=Quantity+1 where ModelID='"+modelid+"'";
-            query3="update EngineParts e,Parttype p Set e.Quantity=e.Quantity-1 where p.PartID=e.PartID and p.ModelID='"+modelid+"'";
-             int i1 =stmt.executeUpdate(query2);
-             int i2 =stmt.executeUpdate(query3);
-        }   catch (Exception e){
+            String ename=request.getParameter("ename");
+              String item=request.getParameter("item");
+             String Kit=request.getParameter("kit");
+              String Cap=request.getParameter("cap");
+               String Cil=request.getParameter("cil");
+     Random rand = new Random();  
+    int n= rand.nextInt(100);
+             query2="insert into EngineDesign(EID,Ename) values('"+n+"','"+ename+"')";
+              int i1 =stmt.executeUpdate(query2);
+             
+              query4="update EngineDesign set FuelType='"+item+"' where Ename='"+ename+"'";
+              int i4=stmt.executeUpdate(query4);
+              query6="update EngineDesign set Kit='"+Kit+"' where Ename='"+ename+"'";
+              int i6=stmt.executeUpdate(query6);
+              query7="update EngineDesign set Cubic='"+Cap+"' where Ename='"+ename+"'";
+              int i7=stmt.executeUpdate(query7);
+              query8="update EngineDesign set Cylinder='"+Cil+"' where Ename='"+ename+"'";
+              int i8=stmt.executeUpdate(query8);
+               query1="select * from EngineDesign where Ename='"+ename+"'";
+             res1 =dbconn.getResult(query1, conn);
+                 while(res1.next()){
+                lst1.add(res1.getString("EID"));
+                 lst1.add(res1.getString("Ename"));
+                  lst1.add(res1.getString("FuelType"));
+                   lst1.add(res1.getString("Cubic"));
+                    lst1.add(res1.getString("Cylinder")); 
+                    lst1.add(res1.getString("Kit"));
+                    
+                 }res1.close(); 
+        }catch (Exception e){
              
             RequestDispatcher rd =request.getRequestDispatcher("/modules/manufacturing/error.jsp");
             rd.forward(request, response);
         }finally
         {
-            
-             RequestDispatcher rd =request.getRequestDispatcher("ManuDisplayEngine");
+            request.setAttribute("EmpData4", lst1);
+             RequestDispatcher rd =request.getRequestDispatcher("ManuDesignEngine");
             rd.forward(request, response);
-             
+             lst1.clear();
              out.close();
         }
     }

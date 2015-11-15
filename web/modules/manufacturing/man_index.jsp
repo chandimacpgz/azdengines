@@ -87,7 +87,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</li>
 						<!---->
 						<li class="col-md-2">
-						<a href="../../ManuDisplayPart" class="gray">
+						<a href="ManuDisplayPart" class="gray">
 						<span class="glyphicon glyphicon-thumbs-up " aria-hidden="true"></span>
 						Availability
 						</a>
@@ -161,13 +161,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 			</div>
 		</div>
+             
                 
                  <div class="container">
+                       <div class="services-top">
 				<div class="col-md-8 news-left">
                                     <div class="news-right">
                                         
                                         <h1 >Create Engine</h1><br/>
-                                       <table>  <tr><td>Model ID</td><td>Engine Name</td><td>Fuel type</td><td>Cylinder</td><td>Cubic Capacity</td><td>Cost</td><td>Quantity</td><td>Create</td></tr>         
+                                       <table>  <tr><td>Engine Name</td><td>Fuel type</td><td>Cylinder</td><td>Cubic Capacity</td><td>Kit</td><td>Cost</td><td>Quantity</td><td>Create</td></tr>         
                                         <%Iterator itr7;%>
                                                     <%List data7=(List)request.getAttribute("EmpData1");
                                                     for(itr7=data7.iterator();itr7.hasNext();){
@@ -177,13 +179,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                                  
                                                          <tr>
                                                                <% String s=(String) itr7.next();%>
-                                                            <td><%=s%></td>
+                                                           
                                                        <td><%= itr7.next()%></td>
                                                         <td><%= itr7.next()%></td>
                                                          <td><%= itr7.next()%></td>
                                                           <td><%= itr7.next()%></td>
                                                             <td><%= itr7.next()%></td>
-                                                              <td><%= itr7.next()%></td>
+                                                             <td><%= itr7.next()%></td>
+                                                             <td><%= itr7.next()%></td>
                                                               <td><input type="submit"  name="Create" value="Create" onclick="Create(<%=s%>)" ></td>
                                                         
                                                            
@@ -193,21 +196,70 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   
                                        </table>
                                     </div></div></div>
-                                                         <div> <div class="container">
-				<div class="col-md-6 news-left">
-                                    <div class="news-right"><h2>Engine Modules</h2></div></div></div></div>
-                                    
+                    <div class="container">
+                  
+                   <div class="col-md-4 ser-rgt">
+               
+                     
+                                    <div class="news-right">
+                                        <h3 >Customer Satisfaction</h3><br/></br/><br/></br/><br/>
+                                            <h4 >Module 1</h4>
+							  <div class="progress">
+                                                            
+								<div class="progress-bar progress-bar-danger" style="width: <%= 45%>%"><span class="sr-only">10% Complete (danger)</span></div>
+								<div class="progress-bar progress-bar-warning" style="width: 35%"><span class="sr-only">20% Complete (warning)</span></div>
+								
+                                                                <div class="progress-bar progress-bar-success" style="width: 45%"><span class="sr-only">35% Complete (success)</span></div>
+                                                          </div>
+                                             <h4 >Module 2</h4>
+                                              <div class="progress">
+								<div class="progress-bar progress-bar-danger" style="width: 40%"><span class="sr-only">10% Complete (danger)</span></div>
+								<div class="progress-bar progress-bar-warning" style="width: 25%"><span class="sr-only">20% Complete (warning)</span></div>
+								
+                                                                <div class="progress-bar progress-bar-success" style="width: 35%"><span class="sr-only">35% Complete (success)</span></div>
+                                                          </div>
+                                              <h4 >Module 3</h4>
+                                              <div class="progress">
+								<div class="progress-bar progress-bar-danger" style="width: 10%"><span class="sr-only">10% Complete (danger)</span></div>
+								<div class="progress-bar progress-bar-warning" style="width: 45%"><span class="sr-only">20% Complete (warning)</span></div>
+								
+                                                                <div class="progress-bar progress-bar-success" style="width: 45%"><span class="sr-only">35% Complete (success)</span></div>
+                                                          </div>
+                                               <h4 >Module 4</h4>
+                                              <div class="progress">
+								<div class="progress-bar progress-bar-danger" style="width: 30%"><span class="sr-only">10% Complete (danger)</span></div>
+								<div class="progress-bar progress-bar-warning" style="width: 30%"><span class="sr-only">20% Complete (warning)</span></div>
+								
+                                                                <div class="progress-bar progress-bar-success" style="width: 40%"><span class="sr-only">35% Complete (success)</span></div>
+                                                          </div>
+                                                <h4 >Module 5</h4>
+                                              <div class="progress">
+								<div class="progress-bar progress-bar-danger" style="width: 20%"><span class="sr-only">10% Complete (danger)</span></div>
+								<div class="progress-bar progress-bar-warning" style="width: 35%"><span class="sr-only">20% Complete (warning)</span></div>
+								
+                                                                <div class="progress-bar progress-bar-success" style="width: 45%"><span class="sr-only">35% Complete (success)</span></div>
+                                                          </div>
+                                                 <h4 >Module 6</h4>
+                                              <div class="progress">
+								<div class="progress-bar progress-bar-danger" style="width: 20%"><span class="sr-only">10% Complete (danger)</span></div>
+								<div class="progress-bar progress-bar-warning" style="width: 25%"><span class="sr-only">20% Complete (warning)</span></div>
+								
+                                                                <div class="progress-bar progress-bar-success" style="width: 55%"><span class="sr-only">35% Complete (success)</span></div>
+                                                          </div>
+                                    </div></div></div></div>
+                                                        
+                                                    
                 
                <%Iterator itr1;%>
                                                     <%List data1=(List)request.getAttribute("EmpData1");
                                                     for(itr1=data1.iterator();itr1.hasNext();){
                                                             %>
                 <div class="container">
-				<div class="col-md-6 news-left">
-					<div class="news-right">
+				<div class="col-md-8 news-left">
+                                    <div class="news-right"><h4>Engine Modules</h4><br/>
                <table>
                                                            
-                   <tr><td>Model ID</td><td>Engine Name</td><td>Fuel type</td><td>Cylinder</td><td>Cubic Capacity</td><td>Cost</td></tr>         
+                   <tr><td>Model ID</td><td>Engine Name</td><td>Fuel type</td><td>Cylinder</td><td>Cubic Capacity</td><td>Kit</td><td>Cost</td><td>Quantity</td></tr>         
                                                             <tr>
                                                                  
                                                          
@@ -218,6 +270,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                          <td><%= itr1.next()%></td>
                                                           <td><%= itr1.next()%></td>
                                                             <td><%= itr1.next()%></td>
+                                                             <td><%= itr1.next()%></td>
+                                                       <td><%= itr1.next()%></td>
                                                       
                                                         
                                                            

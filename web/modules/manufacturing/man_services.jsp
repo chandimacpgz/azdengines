@@ -63,7 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</li>
 						<!---->
 						<li class="col-md-2">
-						<a href="man_news.jsp" class="gray">
+						<a href="../../ManuDisplayPart" class="gray">
 						<span class="glyphicon glyphicon-thumbs-up " aria-hidden="true"></span>
 						Availability
 						</a>
@@ -129,7 +129,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div class="ser-lt">
 									<h5>Engine Design</h5>
                                                                        
-                                                                        <h3><a href="enginedesign.jsp"><span class="label label-primary">Engine Design</span></a></h3>
+                                                                        <h3><a href="../../ManuDesignEngine"><span class="label label-primary">Engine Design</span></a></h3>
                                                                          
 								</div>
                                                             

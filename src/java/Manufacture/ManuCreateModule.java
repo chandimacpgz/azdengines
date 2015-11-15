@@ -3,6 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Manufacture;
 
 import java.io.IOException;
@@ -16,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Krish
  */
-public class CreateModule extends HttpServlet {
+public class ManuCreateModule extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,10 +37,12 @@ public class CreateModule extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-           String name=request.getParameter("ename");
-           String fuel=request.getParameter("item");
-           out.print(fuel);
-           out.print(name);
+            String name=request.getParameter("ename");
+            String fuel=request.getParameter("item");
+            String part=request.getParameter("productId");
+            out.println(name);
+            out.println(fuel);
+             out.println(part);
            
         }
     }

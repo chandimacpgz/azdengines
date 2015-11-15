@@ -24,6 +24,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<script src="../../js/module_jquery-2.1.4.min.js"></script>
 		<!--bootstrap-js-->
 			<script src="../../js/module_bootstrap.min.js"></script>
+                          <style>
+                        table, th, td {
+                         border: 2px solid black;
+                         border-collapse: collapse;
+                        }
+                        th, td {
+                        padding: 15px;
+                        }
+                        </style>
+                         <style>input {
+                                color: #FFFFFF; font-weight: bold; font-size: 14px; background-color: #FF0000;
+                            }</style>
 </head>
 <body>
 		
@@ -52,33 +64,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                
 						<!---->
 						<li class="col-md-2">
-						<a href="../../ManuDisplayEngine" class="pink">
+						<a href="ManuDisplayEngine" class="pink">
 						<span class="glyphicon glyphicon-cog " aria-hidden="true"></span>
 						Manufacturing
 						</a>
 						</li>
 						 <li class="col-md-2">
-						<a href="man_services.jsp" class="sky">
+						<a href="modules/manufacturing/man_services.jsp" class="sky">
 						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 						Design
 						</a>
 						</li>
 						<!---->
 						<li class="col-md-2">
-						<a href="man_news.jsp" class="gray">
+						<a href="ManuDisplayPart" class="gray">
 						<span class="glyphicon glyphicon-thumbs-up " aria-hidden="true"></span>
 						Availability
 						</a>
 						</li>
 						<!---->
 						<li class="col-md-2">	
-						<a href="man_blog.jsp" class="green">
+						<a href="modules/manufacturing/man_blog.jsp" class="green">
 						<span class="glyphicon glyphicon-picture " aria-hidden="true"></span>
 						Price
 						</a>
 						</li>
 						<li class="col-md-2">
-						<a href="man_contact.jsp" class="sky">
+						<a href="modules/manufacturing/man_contact.jsp" class="sky">
 						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 						Report
 						</a>
@@ -123,10 +135,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-6 news-left">
 					<div class="news-right">
 						<h4>05 June, 2015</h4>
-						<h6><a href="#">Integer rutrum ante</a></h6>
+						<h6><a href="#">Module 1</a></h6>
 						<p>The performance of an engine is measured by power output, economy, durability, and emissions. Today's engines are computer controlled and regulate the air / fuel delivery, ignition timing, and emissions.</p>
-                                                
-                <table><tr><td>Model Number</td><td>Part Name</td><td>Available item</td></tr><%Iterator itr1;%>
+                                   <img src="../../images/engin1.jpg" class="img-responsive" alt="">   <br/>                    
+                <table><tr><td>Part ID</td><td>Part Name</td><td>Part Description</td><td>Cost</td><td>Quantity</td><td>Order</td></tr>
+                    <%Iterator itr1;%>
                                                     <%List data1=(List)request.getAttribute("EmpData1");
                                                     for(itr1=data1.iterator();itr1.hasNext();){
                                                             %>
@@ -136,10 +149,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                                 
                                                          
                                                             <td><%= itr1.next()%></td>
-                                                            <td><%= itr1.next()%></td>
                                                              <td><%= itr1.next()%></td>
-                                                            <td><%= itr1.next()%></td>
-                                                            <td><%= itr1.next()%></td>
+                                                              <td><%= itr1.next()%></td>
+                                                               <td><%= itr1.next()%></td>
+                                                                <td><%= itr1.next()%></td>
+                                                                <td><input type="submit" value="Order"></td>
+                                                           
                                                             
                                                           
                                                             <%}%></tr></table>
@@ -148,10 +163,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-6 news-left">
 					<div class="news-right">
 						<h4>05 June, 2015</h4>
-						<h6><a href="#">Duis ac turpis</a></h6>
+						<h6><a href="#">Module 2</a></h6>
 						<p>The performance of an engine is measured by power output, economy, durability, and emissions. Today's engines are computer controlled and regulate the air / fuel delivery, ignition timing, and emissions.</p>
-                                                
-                <table><tr><td>Model Number</td><td>Part Name</td><td>Available item</td></tr><%Iterator itr2;%>
+                                                 <img src="../../images/engin2.jpg" class="img-responsive" alt=""><br/>     
+                <table><tr><td>Part ID</td><td>Part Name</td><td>Part Description</td><td>Cost</td><td>Quantity</td><td>Order</td></tr>
+                    <%Iterator itr2;%>
                                                     <%List data2=(List)request.getAttribute("EmpData2");
                                                     for(itr2=data2.iterator();itr2.hasNext();){
                                                             %>
@@ -161,21 +177,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                                 
                                                          
                                                             <td><%= itr2.next()%></td>
-                                                            <td><%= itr2.next()%></td>
                                                              <td><%= itr2.next()%></td>
-                                                            <td><%= itr2.next()%></td>
-                                                            <td><%= itr2.next()%></td>
+                                                              <td><%= itr2.next()%></td>
+                                                               <td><%= itr2.next()%></td>
+                                                                <td><%= itr2.next()%></td>
+                                                           <td><input type="submit" value="Order"></td>
+                                                           
                                                             
                                                           
-                                                            <%}%></tr></table></div>
+                                                            <%}%></tr>
+                                                  </table></div>
 				</div>
 				<div class="col-md-6 news-left">
 					<div class="news-right">
 						<h4>05 June, 2015</h4>
-						<h6><a href="#"> Aliquam erat volutpat</a></h6>
+						<h6><a href="#"> Module 3</a></h6>
 						<p>The performance of an engine is measured by power output, economy, durability, and emissions. Today's engines are computer controlled and regulate the air / fuel delivery, ignition timing, and emissions.</p>
-                                                
-                <table><tr><td>Model Number</td><td>Part Name</td><td>Available item</td></tr><%Iterator itr3;%>
+                                                <img src="../../images/engin3.jpg" class="img-responsive" alt=""> <br/>     
+                <table><tr><td>Part ID</td><td>Part Name</td><td>Part Description</td><td>Cost</td><td>Quantity</td><td>Order</td></tr>
+                    <%Iterator itr3;%>
                                                     <%List data3=(List)request.getAttribute("EmpData3");
                                                     for(itr3=data3.iterator();itr3.hasNext();){
                                                             %>
@@ -185,21 +205,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                                 
                                                          
                                                             <td><%= itr3.next()%></td>
-                                                            <td><%= itr3.next()%></td>
                                                              <td><%= itr3.next()%></td>
-                                                            <td><%= itr3.next()%></td>
-                                                            <td><%= itr3.next()%></td>
+                                                              <td><%= itr3.next()%></td>
+                                                               <td><%= itr3.next()%></td>
+                                                                <td><%= itr3.next()%></td>
+                                                           <td><input type="submit" value="Order"></td>
+                                                           
                                                             
                                                           
-                                                            <%}%></tr></table></div>
+                                                            <%}%></tr>
+                                                  </table></div>
 				</div>
 				<div class="col-md-6 news-left">
 					<div class="news-right">
 						<h4>05 June, 2015</h4>
-						<h6><a href="#">cotetuer adipiscing elit</a></h6>
+						<h6><a href="#">Module 4</a></h6>
 						<p>The performance of an engine is measured by power output, economy, durability, and emissions. Today's engines are computer controlled and regulate the air / fuel delivery, ignition timing, and emissions.</p>
-                                                
-                <table><tr><td>Model Number</td><td>Part Name</td><td>Available item</td></tr><%Iterator itr4;%>
+                                                 <img src="../../images/engin4.jpg" class="img-responsive" alt=""> <br/>    
+                <table><tr><td>Part ID</td><td>Part Name</td><td>Part Description</td><td>Cost</td><td>Quantity</td><td>Order</td></tr>
+                    <%Iterator itr4;%>
                                                     <%List data4=(List)request.getAttribute("EmpData4");
                                                     for(itr4=data4.iterator();itr4.hasNext();){
                                                             %>
@@ -209,38 +233,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                                 
                                                          
                                                             <td><%= itr4.next()%></td>
-                                                            <td><%= itr4.next()%></td>
                                                              <td><%= itr4.next()%></td>
-                                                            <td><%= itr4.next()%></td>
-                                                            <td><%= itr4.next()%></td>
+                                                              <td><%= itr4.next()%></td>
+                                                               <td><%= itr4.next()%></td>
+                                                                <td><%= itr4.next()%></td>
+                                                           <td><input type="submit" value="Order"></td>
+                                                           
                                                             
                                                           
-                                                            <%}%></tr></table></div>
-				</div>
-				<div class="clearfix"></div>
-				<div class="news-bottom">
-				<h3>What's New ?</h3>
-					<div class="col-md-4 new-bt-lt">
-						<h6><a href="#">cotetuer adipiscing elit</a></h6>
-						<p>Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, cotetuer adipiscing elit. Praesent vestibulum molestie lacus ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum.</p>
-					</div>
-					<div class="col-md-4 new-bt-lt">
-						<h6><a href="#">Duis ac turpis</a></h6>
-						<p>Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, cotetuer adipiscing elit. Praesent vestibulum molestie lacus ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum.</p>
-					</div>
-					<div class="col-md-4 new-bt-lt">
-						<h6><a href="#"> Aliquam erat volutpat</a></h6>
-						<p>Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, cotetuer adipiscing elit. Praesent vestibulum molestie lacus ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum.</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-                                	<div class="col-md-6 news-left">
+                                                            <%}%></tr>
+                </table></div></div>
+                                                  <div class="col-md-6 news-left">
 					<div class="news-right">
 						<h4>05 June, 2015</h4>
-						<h6><a href="#">Integer rutrum ante</a></h6>
+						<h6><a href="#">Module 5</a></h6>
 						<p>The performance of an engine is measured by power output, economy, durability, and emissions. Today's engines are computer controlled and regulate the air / fuel delivery, ignition timing, and emissions.</p>
-                                                
-                <table><tr><td>Model Number</td><td>Part Name</td><td>Available item</td></tr><%Iterator itr5;%>
+                                                 <img src="../../images/engin5.jpg" class="img-responsive" alt="">  <br/>   
+                <table><tr><td>Part ID</td><td>Part Name</td><td>Part Description</td><td>Cost</td><td>Quantity</td><td>Order</td></tr>
+                         <%Iterator itr5;%>
                                                     <%List data5=(List)request.getAttribute("EmpData5");
                                                     for(itr5=data5.iterator();itr5.hasNext();){
                                                             %>
@@ -250,22 +260,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                                 
                                                          
                                                             <td><%= itr5.next()%></td>
-                                                            <td><%= itr5.next()%></td>
                                                              <td><%= itr5.next()%></td>
-                                                            <td><%= itr5.next()%></td>
-                                                            <td><%= itr5.next()%></td>
+                                                              <td><%= itr5.next()%></td>
+                                                               <td><%= itr5.next()%></td>
+                                                                <td><%= itr5.next()%></td>
+                                                           <td><input type="submit" value="Order"></td>
+                                                           
                                                             
                                                           
-                                                            <%}%></tr></table>
+                                                            <%}%></tr>
+                                                  </table>
 					</div>
 				</div>
                                         	<div class="col-md-6 news-left">
 					<div class="news-right">
 						<h4>05 June, 2015</h4>
-						<h6><a href="#">Integer rutrum ante</a></h6>
+						<h6><a href="#">Module 6</a></h6>
 						<p>The performance of an engine is measured by power output, economy, durability, and emissions. Today's engines are computer controlled and regulate the air / fuel delivery, ignition timing, and emissions.</p>
-                                                
-                <table><tr><td>Model Number</td><td>Part Name</td><td>Available item</td></tr><%Iterator itr6;%>
+                                                 <img src="../../images/engin6.jpg" class="img-responsive" alt=""> <br/>    
+                <table><tr><td>Part ID</td><td>Part Name</td><td>Part Description</td><td>Cost</td><td>Quantity</td><td>Order</td></tr>
+                         <%Iterator itr6;%>
                                                     <%List data6=(List)request.getAttribute("EmpData6");
                                                     for(itr6=data6.iterator();itr6.hasNext();){
                                                             %>
@@ -275,13 +289,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                                 
                                                          
                                                             <td><%= itr6.next()%></td>
-                                                            <td><%= itr6.next()%></td>
                                                              <td><%= itr6.next()%></td>
-                                                            <td><%= itr6.next()%></td>
-                                                            <td><%= itr6.next()%></td>
+                                                              <td><%= itr6.next()%></td>
+                                                               <td><%= itr6.next()%></td>
+                                                                <td><%= itr6.next()%></td>
+                                                           <td><input type="submit" value="Order"></td>
+                                                           
                                                             
                                                           
-                                                            <%}%></tr></table>
+                                                            <%}%></tr>
+                                                   </table>
 					</div>
 				</div>
 			</div>

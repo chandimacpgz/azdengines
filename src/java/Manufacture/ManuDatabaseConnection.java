@@ -3,6 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Manufacture;
 
 import java.sql.Connection;
@@ -16,7 +21,10 @@ import java.sql.Statement;
  */
 public class ManuDatabaseConnection {
 
-
+    private static ManuDatabaseConnection db=new ManuDatabaseConnection();
+    public static ManuDatabaseConnection getinstance(){
+        return getinstance();
+    }
     Connection conn;
     Statement stmt;
     ResultSet res;
@@ -42,5 +50,3 @@ public class ManuDatabaseConnection {
     }
 }
   
-
-

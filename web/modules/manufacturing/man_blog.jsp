@@ -63,7 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</li>
 						<!---->
 						<li class="col-md-2">
-						<a href="man_news.jsp" class="gray">
+						<a href="../../ManuDisplayPart" class="gray">
 						<span class="glyphicon glyphicon-thumbs-up " aria-hidden="true"></span>
 						Availability
 						</a>

@@ -56,6 +56,7 @@ public class ManuDisplayEngine extends HttpServlet {
                 lst1.add(res1.getString("FuelType"));
                 lst1.add(res1.getString("Cylinders"));
                 lst1.add(res1.getString("CubicCapacity"));
+                lst1.add(res1.getString("Kit"));
                 lst1.add(res1.getString("Cost"));
                 lst1.add(res1.getString("Quantity"));
                 
