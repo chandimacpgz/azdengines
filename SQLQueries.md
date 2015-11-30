@@ -15,15 +15,9 @@ CREATE TABLE EngineModel(
 	Cost real not null,
 	SellingPrice real,
 	Discount real,
-	AuthorizePerson varchar(50),
-	EngineImage varchar(200)
+	AuthorizePerson varchar(50)
 );
 
-CREATE TABLE EngineType(
-	EngineID int AUTO_INCREMENT primary key,
-	ModelID int,
-        foreign key(ModelID) references EngineModel(ModelID)
-);
 CREATE TABLE EngineParts(
 	PartID int primary key not null,
 	PartName varchar(50) not null,
@@ -44,12 +38,12 @@ CREATE TABLE PartType(
 select * from EngineModel
 select * from EngineType
 
-insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost) values(1,"A","diesel",2,30,"Kit1",10000);
-insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost) values(2,"B","diesel",4,40,"Kit1",40000);
-insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost) values(3,"C","petrol",6,60,"Kit1",50000);
-insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost) values(4,"D","petrol",3,60,"Kit1",20000);
-insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost) values(5,"E","diesel",1,20,"Kit1",120000);
-insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost) values(6,"F","petrol",5,50,"Kit1",15000);
+insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost,SellingPrice,EngineDescription) values(1,"Turbocharged","diesel",2,30,"Kit 2",10000,12500,"Turbochargers were originally known as turbosuperchargers when all forced induction devices were classified as superchargers. Nowadays the term "supercharger" is usually applied only to mechanically driven forced induction devices.");
+insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost,SellingPrice,EngineDescription) values(2,"Subaru WRX","petrol",4,40,"Kit 3",40000,45850,"The Subaru Impreza is a compact automobile that has been manufactured since 1992 by Subaru. Subaru introduced the Impreza as a replacement for the Leone, with the Leone's EA series engines replaced by the newer EJ series versions.");
+insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost,SellingPrice,EngineDescription) values(3,"Chevrolet ","diesel",6,50,"Kit 1",50000,59980,"The Chevrolet Corvair engine is a flat-six boxer piston engine that was used in the 1960s Chevrolet Corvair automobile. It was a highly unusual engine for General Motors: It was air-cooled, used a flat design, with aluminum heads (incorporating integral intake manifolds) and crankcase, with individual iron cylinder barrels.");
+insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost,SellingPrice,EngineDescription) values(4,"Ford Fiesta","petrol",3,30,"Kit 3",20000,26452,"The Ford B-Max (stylized as Ford B-MAX) is a mini multi-purpose vehicle (MPV) manufactured by Ford Europe since 2012. Built on the Ford B3 platform, it was initially unveiled as a concept-car at the 2011 Geneva Motor Show,[1] and was officially launched at the 2012 Mobile World Congress in Barcelona.[2] ");
+insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost,SellingPrice,EngineDescription) values(5,"MINI Cooper","diesel",1,20,"Kit 2",120000,125000,"The Mini is a small economy car made by the British Motor Corporation (BMC) and its successors from 1959 until 2000. The original is considered a British icon of the 1960s.[7][8][9] The Mini was the star car of the main character of the animated TV series Mr. Bean.");
+insert into EngineModel(ModelID,EngineName,FuelType,Cylinders,CubicCapacity,Kit,Cost,SellingPrice,EngineDescription) values(6,"Volvo S60","petrol",5,50,"Kit 1",15000,18500,"Introduced in 1944, the B4B displaced 1,414 cc (1.4 L; 86.3 cu in) and powered the Volvo PV444. It was a departure for Volvo who had not produced an automobile with a four-cylinder engine in nearly 20 years. The B4B was equipped with a single down-draught carburetor. ");
 
 
 
